@@ -1,0 +1,54 @@
+#!/usr/bin/bash
+
+# if bashrc.d directory is missing, make it
+[ -d ${HOME}/.bashrc.d ] || mkdir ${HOME}/.bashrc.d
+
+file_name=${HOME}/.vimrc
+file_link=${PWD}/vimrc
+if [[ -e ${file_name} ]]; then
+	if [[ -L ${file_name} ]]; then
+		cp ${file_name} ${file_name}_bak
+		rm ${file_name}
+	else
+		mv ${file_name} ${file_name}_bak
+	fi
+fi
+ln -s $file_link $file_name
+
+file_name=${HOME}/.gitconfig
+file_link=${PWD}/gitconfig
+if [[ -e ${file_name} ]]; then
+	if [[ -L ${file_name} ]]; then
+		cp ${file_name} ${file_name}_bak
+		rm ${file_name}
+	else
+		mv ${file_name} ${file_name}_bak
+	fi
+fi
+ln -s $file_link $file_name
+
+
+file_name=${HOME}/.aliases
+file_link=${PWD}/aliases
+if [[ -e ${file_name} ]]; then
+	if [[ -L ${file_name} ]]; then
+		cp ${file_name} ${file_name}_bak
+		rm ${file_name}
+	else
+		mv ${file_name} ${file_name}_bak
+	fi
+fi
+ln -s $file_link $file_name
+
+file_name=${HOME}/.bashrc.d/bashrc_user
+file_link=${PWD}/bashrc_user
+if [[ -e ${file_name} ]]; then
+	if [[ -L ${file_name} ]]; then
+		cp ${file_name} ${file_name}_bak
+		rm ${file_name}
+	else
+		mv ${file_name} ${file_name}_bak
+	fi
+fi
+ln -s $file_link $file_name
+
