@@ -1,0 +1,5 @@
+# Source alias file
+if [ -f ${HOME}/.aliases ]; then
+	. ${HOME}/.aliases
+fi
+
