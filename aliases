@@ -3,7 +3,7 @@ alias sv='vncserver -localhost -geometry 1600x900'
 alias svb='vncserver -localhost -geometry 1920x1080'
 
 alias lsa='ls -FG'
-alias lsl='ls -FrtlhG'
+alias lsl='ls -FrtlhG --group-directories-first'
 alias vi='vim'
 
 # colors
